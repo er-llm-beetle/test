@@ -1,0 +1,23 @@
+/.env
+*.DS_Store
+**/**datasets/.DS_Store
+
+# extra llm-cpp-py files:
+config_w_api_w_hf_llm.yaml
+evalutate_yaml_chunked_get_answers_copy.py
+evalutate_yaml_chunked_main_copy.py
+multiple_choice_w_api_ext.py
+
+# cache files:
+__pycachce__
+**/__pycache__/*.pyc
+bl_venv
+
+# Ignore all Excel files
+*.xlsx
+
+# Allow Excel files in the datasets directory
+!datasets/
+!**/**datasets/*.xlsx
+
+evaluation_scores/*.csv

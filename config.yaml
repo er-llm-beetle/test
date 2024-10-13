@@ -1,0 +1,37 @@
+
+# ONLY FOR LOCAL VERSIONS
+
+metadata:
+  version: "1.0"
+  author: "ER"
+  description: "This notebook evaluates different LLM models across various benchmark types such as MMLU, FinanceQA, and Contextual QA."
+  supported_models:
+    # - llama3.1_az_8q
+    # - llama3.1_az
+    # - llama3.1_az_v2
+    - llama3.2:3b-instruct-fp16
+  benchmark_types:
+    # QA: "Handles questions with simple Q&A format"
+    # ContextQA: "Handles questions with context and answers"
+    # Arzuman: "Handles questions with options where one is correct"
+    # Reshad: "Handles questions with topic-based options where one is correct"
+    ARC: "Handles questions with multiple-choice answers, focusing on reasoning and context to determine the correct option."
+  dataset_naming_convention:
+    # _qa: "QA"
+    # _cqa: "ContextQA"
+    # _mmlu_fqa: "Arzuman"
+    # _tc: "Reshad"
+    _mmlu_arc: "ARC"
+
+dataset_files:
+  # - "datasets/input_datasets/LLM_generated_qa.xlsx"
+  # - "datasets/input_datasets/Quad_benchmark_cqa.xlsx"
+  # - "datasets/input_datasets/Banking-finance_benchmark_de-duplicated_latest_mmlu_fqa.xlsx"
+  # - "datasets/input_datasets/Banking_support_en-reshad_tc.xlsx"     # Reshad's old version with eng topic names
+  # - "datasets/input_datasets/Banking_support_aze_version_reshad_tc.xlsx"    # Reshad's updated aze. topic names
+  # - "datasets/input_datasets/arc_translated_mmlu_arc.xlsx"    # old ARC version
+  - "datasets/input_datasets/arc_translated_cutted_with_extra_cols_and_options_structure_last_version_mmlu_arc.xlsx"  # new ARC eng version
+
+output:
+  results_file: "datasets/output_datasets/benchmark_results.xlsx"
+
